@@ -29,9 +29,15 @@ class Board extends React.Component {
 const sq = [];
 for(let i=0;i<9;i++) { sq[i] = i;}
 console.log(sq);
+
+  //{sq.map((i) => { return (<div className="board-row">{this.renderSquare(i)} {i%3 ==2 ? <br />:''}</div>)})}*/
+
+
 return (
-  
-      <div>
+    <div>
+     
+ {sq.filter(i=>i<3).map((i) => { return ( this.renderSquare(i) )})}
+
         <div className="status">{status}</div>
         
         <div className="board-row">
